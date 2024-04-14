@@ -60,13 +60,16 @@ set (Bus_INCLUDE_HEADERS
         include/types.h
         include/frame.h
         include/frame/header.h
+        include/frame/general.h
+        include/frame/buffer.h
 )
 
 set (Bus_INCLUDE_SOURCES
     lib/bus.c
         lib/frame.c
         lib/frame/header.c
-        include/frame/header.h
+        lib/frame/general.c
+        lib/frame/buffer.c
 )
 
 add_library(bus STATIC ${Bus_INCLUDE_HEADERS} ${Bus_INCLUDE_SOURCES})

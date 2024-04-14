@@ -26,9 +26,11 @@ typedef struct {
     u8 command;
 } header_t;
 
-extern header_t header_from_bytes(const uchar* data);
+extern header_t header_unpack(const uchar* data);
 extern action_type_t header_action_type(const header_t *header);
 extern action_dir_t header_action_direction(const header_t *header);
-extern void header_unpack(const header_t *header, u8 *data);
+extern void header_pack(const header_t *header, u8 *data);
+
+extern u8 header_payload_length(const header_t *header);
 
 #endif //BUS_HEADER_H
